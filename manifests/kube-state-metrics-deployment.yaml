@@ -38,7 +38,7 @@ spec:
           initialDelaySeconds: 5
           timeoutSeconds: 5
         securityContext:
-          runAsUser: 65534
-      nodeSelector:
-        kubernetes.io/os: linux
+          #runAsUser: 682713
+      #nodeSelector:
+        #kubernetes.io/os: linux
       serviceAccountName: kube-state-metrics

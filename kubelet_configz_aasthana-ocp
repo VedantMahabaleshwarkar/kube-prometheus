@@ -1,0 +1,104 @@
+{
+  "staticPodPath": "/etc/origin/node/pods",
+  "syncFrequency": "1m0s",
+  "fileCheckFrequency": "20s",
+  "httpCheckFrequency": "0s",
+  "address": "0.0.0.0",
+  "port": 10250,
+  "tlsCipherSuites": [
+    "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305",
+    "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256",
+    "TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+    "TLS_RSA_WITH_AES_128_GCM_SHA256",
+    "TLS_RSA_WITH_AES_256_GCM_SHA384",
+    "TLS_RSA_WITH_AES_128_CBC_SHA",
+    "TLS_RSA_WITH_AES_256_CBC_SHA"
+  ],
+  "tlsMinVersion": "VersionTLS12",
+  "rotateCertificates": true,
+  "serverTLSBootstrap": true,
+  "authentication": {
+    "x509": {
+      "clientCAFile": "/etc/origin/node/client-ca.crt"
+    },
+    "webhook": {
+      "enabled": true,
+      "cacheTTL": "5m0s"
+    },
+    "anonymous": {
+      "enabled": true
+    }
+  },
+  "authorization": {
+    "mode": "Webhook",
+    "webhook": {
+      "cacheAuthorizedTTL": "5m0s",
+      "cacheUnauthorizedTTL": "5m0s"
+    }
+  },
+  "registryPullQPS": 5,
+  "registryBurst": 10,
+  "eventRecordQPS": 5,
+  "eventBurst": 10,
+  "enableDebuggingHandlers": true,
+  "healthzPort": 0,
+  "healthzBindAddress": "127.0.0.1",
+  "oomScoreAdj": -999,
+  "clusterDomain": "cluster.local",
+  "clusterDNS": [
+    "10.0.78.161"
+  ],
+  "streamingConnectionIdleTimeout": "4h0m0s",
+  "nodeStatusUpdateFrequency": "10s",
+  "imageMinimumGCAge": "2m0s",
+  "imageGCHighThresholdPercent": 85,
+  "imageGCLowThresholdPercent": 80,
+  "volumeStatsAggPeriod": "1m0s",
+  "cgroupsPerQOS": true,
+  "cgroupDriver": "systemd",
+  "cpuManagerPolicy": "none",
+  "cpuManagerReconcilePeriod": "10s",
+  "runtimeRequestTimeout": "2m0s",
+  "hairpinMode": "promiscuous-bridge",
+  "maxPods": 250,
+  "podPidsLimit": -1,
+  "resolvConf": "/etc/resolv.conf",
+  "cpuCFSQuota": true,
+  "maxOpenFiles": 1000000,
+  "contentType": "application/vnd.kubernetes.protobuf",
+  "kubeAPIQPS": 5,
+  "kubeAPIBurst": 10,
+  "serializeImagePulls": true,
+  "evictionHard": {
+    "imagefs.available": "15%",
+    "memory.available": "100Mi",
+    "nodefs.available": "10%",
+    "nodefs.inodesFree": "5%"
+  },
+  "evictionPressureTransitionPeriod": "5m0s",
+  "enableControllerAttachDetach": true,
+  "makeIPTablesUtilChains": true,
+  "iptablesMasqueradeBit": 0,
+  "iptablesDropBit": 15,
+  "featureGates": {
+    "RotateKubeletClientCertificate": true,
+    "RotateKubeletServerCertificate": true
+  },
+  "failSwapOn": false,
+  "containerLogMaxSize": "10Mi",
+  "containerLogMaxFiles": 5,
+  "enforceNodeAllocatable": [
+    "pods"
+  ],
+  "kind": "KubeletConfiguration",
+  "apiVersion": "kubelet.config.k8s.io/v1beta1"
+}

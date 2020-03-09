@@ -145,9 +145,9 @@ local k = import 'ksonnet/ksonnet.beta.4/k.libsonnet';
           nodeSelector: { 'kubernetes.io/os': 'linux' },
           serviceAccountName: 'alertmanager-' + $._config.alertmanager.name,
           securityContext: {
-            runAsUser: 1000,
+            #runAsUser: 1000,
             runAsNonRoot: true,
-            fsGroup: 2000,
+            #fsGroup: 2000,
           },
         },
       },
